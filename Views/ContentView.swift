@@ -3,16 +3,15 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var cameraManager = CameraManager()
     @StateObject private var speechManager = SpeechManager()
-    @StateObject private var teleprompterEngine = TeleprompterEngine()
 
     var body: some View {
         TabView {
-            CameraPromptView(cameraManager: cameraManager)
+            CameraPromptView()
                 .tabItem {
                     Label("Camera", systemImage: "camera")
                 }
 
-            ScriptEditorView(speechManager: speechManager)
+            ScriptEditorView()
                 .tabItem {
                     Label("Script Editor", systemImage: "doc.text")
                 }
